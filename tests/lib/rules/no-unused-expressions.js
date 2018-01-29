@@ -131,7 +131,7 @@ ruleTester.run("no-unused-expressions", rule, {
             errors: ["Expected an assignment or function call and instead saw an expression."]
         },
         // Chai statements
-        { code: "foo.expect('bar').not.to.pass;", errors: [{ message: "Expected an assignment or function call and instead saw an expression.", type: "ExpressionStatement" }]},
-        { code: "should.not.pass;", errors: [{ message: "Expected an assignment or function call and instead saw an expression.", type: "ExpressionStatement" }] },
+        { code: "expect(foo).to.not.pass;", errors: [{ message: "Expected an assignment or function call and instead saw an expression.", type: "ExpressionStatement" }]},
+        { code: "foo.should.not.pass;", errors: [{ message: "Expected an assignment or function call and instead saw an expression.", type: "ExpressionStatement" }] },
     ]
 });
